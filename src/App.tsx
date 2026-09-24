@@ -40,11 +40,11 @@ const timeline = [
 ]
 
 const countries = [
-  { flag: '🇧🇷', name: 'Brasil' },
-  { flag: '🇺🇸', name: 'Estados Unidos' },
-  { flag: '🇲🇽', name: 'México' },
-  { flag: '🇨🇴', name: 'Colômbia' },
-  { flag: '🇵🇹', name: 'Portugal' },
+  { flag: '�🇸', city: 'Flórida', country: 'Estados Unidos', role: 'Headquarters' },
+  { flag: '🇧🇷', city: 'São Paulo', country: 'Brasil', role: 'Headquarters • Fábrica' },
+  { flag: '🇵🇹', city: 'Entroncamento', country: 'Portugal', role: 'Fábrica' },
+  { flag: '🇲🇽', city: 'Cidade do México', country: 'México', role: 'Fábrica' },
+  { flag: '🇨🇴', city: 'Bogotá', country: 'Colômbia', role: 'Fábrica' },
 ]
 
 const cases = [
@@ -183,18 +183,31 @@ function App() {
                 <span className="chip chip-soft">3D Printed</span>
               </div>
 
-              <div className="planet-wrap">
-                <div className="planet-core" aria-label="Globo global da Esthetic Aligner">
-                  <div className="planet-surface" />
+              <div className="geo-scene" aria-label="Mapa global da Esthetic Aligner">
+                <div className="geo-orbit geo-orbit-one" />
+                <div className="geo-orbit geo-orbit-two" />
+                <div className="geo-core">
+                  <span className="geo-pin geo-pin-one" />
+                  <span className="geo-pin geo-pin-two" />
+                  <span className="geo-pin geo-pin-three" />
+                  <span className="geo-pin geo-pin-four" />
                 </div>
               </div>
 
               <div className="showcase-badges">
                 {countries.map((country) => (
-                  <span key={country.name} className="flag-badge">
-                    <span>{country.flag}</span>
-                    {country.name}
-                  </span>
+                  <div key={`${country.city}-${country.country}`} className="country-item">
+                    <span className="flag-badge" aria-label={country.country}>
+                      {country.flag}
+                    </span>
+
+                    <div className="country-copy">
+                      <strong>
+                        {country.city}, {country.country}
+                      </strong>
+                      <span>{country.role}</span>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
