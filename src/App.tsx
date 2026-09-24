@@ -1,40 +1,40 @@
 import { useState, type MouseEvent } from 'react'
 import './App.css'
 
-const navItems = ['Soluções', 'Resultados', 'Processo', 'Contato']
+const navItems = ['Quem Somos', 'Como Funciona', 'Produtos', 'Casos Clínicos']
 
 const stats = [
-  { value: '3x', label: 'maior presença online' },
-  { value: '48h', label: 'para primeira versão' },
-  { value: '94%', label: 'de retenção do público' },
+  { value: '16k+', label: 'dentistas credenciados' },
+  { value: '10', label: 'países com atuação' },
+  { value: '2008', label: 'fundação da marca' },
 ]
 
 const pillars = [
   {
-    title: 'Estratégia de marca',
-    text: 'Posicionamento claro, narrativa forte e mensagens que conectam com o cliente certo.',
+    title: 'Tecnologia avançada',
+    text: 'Alinhadores com materiais e engenharia pensados para conforto, previsibilidade e resultados estéticos.',
   },
   {
-    title: 'Experiência digital',
-    text: 'Interfaces refinadas, fluxos simplificados e movimento que orienta a atenção.',
+    title: 'Experiência de tratamento',
+    text: 'Fluxo claro, conforto para o paciente e uma rotina que se adapta ao dia a dia da prática.',
   },
   {
-    title: 'Conversão',
-    text: 'Conteúdo, CTA e estrutura pensados para transformar visitas em oportunidades reais.',
+    title: 'Presença global',
+    text: 'Mais de 16 mil profissionais credenciados e presença em mercados de relevância internacional.',
   },
 ]
 
 const steps = [
-  'Diagnóstico do cenário e público',
-  'Criação da narrativa e direção visual',
-  'Construção da experiência interativa',
-  'Ajustes de conversão e lançamento',
+  'Avaliação do caso e planejamento digital',
+  'Primeiro alinhador da série em uso por 10 dias',
+  'Progressão com alinhadores e acompanhamento clínico',
+  'Retenção e protocolos complementares para estabilidade',
 ]
 
 const timeline = [
-  { name: 'VISÃO', value: 'Marca com clareza' },
-  { name: 'EXPERIÊNCIA', value: 'Design premium' },
-  { name: 'RESULTADO', value: 'Engajamento real' },
+  { name: '2008', value: 'Início da produção' },
+  { name: '2015', value: 'Ortholab e credenciamento' },
+  { name: '2024', value: 'Nova linha de produtos' },
 ]
 
 function App() {
@@ -55,14 +55,14 @@ function App() {
       <div className="orb orb-three" aria-hidden="true" />
 
       <header className="topbar">
-        <div className="brand" aria-label="APP Brasil home">
+        <div className="brand" aria-label="Esthetic Aligner home">
           <span className="brand-mark" />
-          <span>APP BRASIL</span>
+          <span>ESTHETIC ALIGNER</span>
         </div>
 
         <nav className="main-nav" aria-label="Navegação principal">
           {navItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`}>
+            <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}>
               {item}
             </a>
           ))}
@@ -74,23 +74,25 @@ function App() {
       </header>
 
       <main>
-        <section className="hero" id="solucoes">
+        <section className="hero" id="quem-somos">
           <div className="hero-copy">
-            <div className="eyebrow">Estratégia • experiência • conversão</div>
+            <div className="eyebrow">Tecnologia • estética • confiança</div>
             <h1>
-              Uma presença digital que <span>atrai</span>, <span>impressiona</span> e vende.
+              Alinhadores que <span>transformam</span> sorrisos com precisão e conforto.
             </h1>
             <p>
-              Transformamos apresentação institucional em uma experiência moderna, dinâmica e
-              memorável, pensada para reforçar a marca e gerar conexão real com o público.
+              Fundada em 2008, a Esthetic Aligner é a maior empresa brasileira de alinhadores
+              ortodônticos, com presença na Europa e América Latina. Nossa missão é oferecer
+              tratamentos mais eficientes, estéticos e acessíveis para simplificar a jornada do
+              paciente e potencializar a prática odontológica.
             </p>
 
             <div className="cta-row">
               <a className="btn btn-primary large" href="#contato">
                 Solicitar proposta
               </a>
-              <a className="btn btn-secondary large" href="#resultados">
-                Ver como funciona
+              <a className="btn btn-secondary large" href="#como-funciona">
+                Como funciona
               </a>
             </div>
 
@@ -120,13 +122,13 @@ function App() {
                   <span />
                   <span />
                 </div>
-                <div className="status-pill">online</div>
+                <div className="status-pill">global</div>
               </div>
 
               <div className="dashboard-body">
                 <div className="panel panel-large">
                   <div className="panel-topline">
-                    <span>Performance</span>
+                    <span>Resultados</span>
                     <strong>+68%</strong>
                   </div>
                   <div className="bars">
@@ -141,8 +143,8 @@ function App() {
 
                 <div className="panel-grid">
                   <div className="panel small-panel">
-                    <span>Lead score</span>
-                    <strong>92</strong>
+                    <span>Credenciados</span>
+                    <strong>16k+</strong>
                     <div className="sparkline" aria-hidden="true">
                       <span />
                       <span />
@@ -153,16 +155,16 @@ function App() {
                   </div>
 
                   <div className="panel small-panel">
-                    <span>Campanha</span>
-                    <strong>Ativa</strong>
+                    <span>Presença</span>
+                    <strong>10 países</strong>
                     <div className="pulse"></div>
                   </div>
                 </div>
 
                 <div className="panel panel-bottom">
                   <div className="mini-row">
-                    <span>Engajamento</span>
-                    <strong>8.4k</strong>
+                    <span>Tratamentos</span>
+                    <strong>Estético</strong>
                   </div>
                   <div className="progress">
                     <span />
@@ -173,7 +175,7 @@ function App() {
           </div>
         </section>
 
-        <section className="metrics" id="resultados">
+        <section className="metrics" id="como-funciona">
           {timeline.map((item) => (
             <div key={item.name} className="metric-card">
               <span>{item.name}</span>
@@ -182,10 +184,10 @@ function App() {
           ))}
         </section>
 
-        <section className="pillars" id="processo">
+        <section className="pillars" id="produtos">
           <div className="section-header">
-            <span className="eyebrow">Por que funciona</span>
-            <h2>Do posicionamento à experiência, tudo pensado para impactar.</h2>
+            <span className="eyebrow">Por que a Esthetic Aligner</span>
+            <h2>Uma solução completa para tratamento ortodôntico moderno.</h2>
           </div>
 
           <div className="pillars-grid">
@@ -199,10 +201,10 @@ function App() {
           </div>
         </section>
 
-        <section className="process" id="contato">
+        <section className="process" id="casos-clinicos">
           <div className="process-copy">
-            <span className="eyebrow">Como trabalhamos</span>
-            <h2>Fazemos o produto ganhar presença, profundidade e movimento.</h2>
+            <span className="eyebrow">Como funciona</span>
+            <h2>Estéticos, confortáveis e eficientes, os alinhadores corrigem os dentes de forma progressiva.</h2>
           </div>
 
           <ol className="process-list">
