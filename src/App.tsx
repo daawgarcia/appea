@@ -40,7 +40,7 @@ const timeline = [
 ]
 
 const countries = [
-  { flag: '�🇸', city: 'Flórida', country: 'Estados Unidos', role: 'Headquarters' },
+  { flag: '🇺🇸', city: 'Flórida', country: 'Estados Unidos', role: 'Headquarters' },
   { flag: '🇧🇷', city: 'São Paulo', country: 'Brasil', role: 'Headquarters • Fábrica' },
   { flag: '🇵🇹', city: 'Entroncamento', country: 'Portugal', role: 'Fábrica' },
   { flag: '🇲🇽', city: 'Cidade do México', country: 'México', role: 'Fábrica' },
@@ -183,10 +183,18 @@ function App() {
                 <span className="chip chip-soft">3D Printed</span>
               </div>
 
-              <div className="geo-scene" aria-label="Mapa global da Esthetic Aligner">
+              <div className="geo-scene" aria-label="Presença global da Esthetic Aligner">
                 <div className="geo-orbit geo-orbit-one" />
                 <div className="geo-orbit geo-orbit-two" />
                 <div className="geo-core">
+                  <video
+                    className="geo-video"
+                    src="/videos/global-network.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
                   <span className="geo-pin geo-pin-one" />
                   <span className="geo-pin geo-pin-two" />
                   <span className="geo-pin geo-pin-three" />
